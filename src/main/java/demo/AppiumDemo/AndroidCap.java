@@ -22,7 +22,7 @@ public class AndroidCap {
 
 		cap = new DesiredCapabilities();
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("deviceName", "emulator-5554");
+		cap.setCapability("deviceName", "emulator-4723");
 		cap.setCapability("automationName", "UiAutomator2");
 		// cap.setCapability("appPackage", "com.android.calculator2");
 		// cap.setCapability("appActivity", ".Calculator");
