@@ -23,7 +23,7 @@ public class AndroidCap {
 	public void cap() throws MalformedURLException {
 		cap = new DesiredCapabilities();
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("deviceName", "emulator-5554");
+		cap.setCapability("deviceName", "emulator-4723");
 		cap.setCapability("automationName", "UiAutomator2");
 		cap.setCapability("platformVersion", "10.0");		// cap.setCapability("appPackage", "com.android.calculator2");
 		// cap.setCapability("appActivity", ".Calculator");
