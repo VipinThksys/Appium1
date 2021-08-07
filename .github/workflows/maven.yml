@@ -35,7 +35,6 @@ jobs:
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
-        port: 4723
         arch: x86_64
         profile: Nexus 6
     - name: Build with Maven
