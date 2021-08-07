@@ -7,6 +7,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -18,13 +19,13 @@ public class AndroidCap {
 	public static AppiumDriver<MobileElement> driver;
 	public static DesiredCapabilities cap;
 
-	public static void main(String[] args) throws InterruptedException, MalformedURLException {
-
+	
+	public void cap() throws MalformedURLException {
 		cap = new DesiredCapabilities();
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("deviceName", "emulator-4723");
+		cap.setCapability("deviceName", "emulator-5554");
 		cap.setCapability("automationName", "UiAutomator2");
-		// cap.setCapability("appPackage", "com.android.calculator2");
+		cap.setCapability("platformVersion", "10.0");		// cap.setCapability("appPackage", "com.android.calculator2");
 		// cap.setCapability("appActivity", ".Calculator");
 		// cap.setCapability("appPackage", "com.google.android.dialer");
 		// cap.setCapability("appActivity", ".DialtactsActivity");
@@ -34,11 +35,24 @@ public class AndroidCap {
 		cap.setCapability("appActivity", "com.android.vending.AssetBrowserActivity");
 
 		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
-		Thread.sleep(30000);
-
-		System.out.println("appium demo prooject");
-
+		
+	}
+	
+	
+	
+	
+	@Test
+	public void playStore() throws MalformedURLException, InterruptedException {
+		cap();
+		System.out.println("driver launch");
+		Thread.sleep(20000);
+		quit();
+		System.out.println("driver quit");
+	}
+	
+	
+	
+	public void quit() {
 		driver.quit();
 	}
-
 }
