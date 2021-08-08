@@ -23,14 +23,20 @@ jobs:
         distribution: 'adopt'
         
     - uses: actions/checkout@v2
-    - name: setup node 14
-    - uses: actions/setup-node@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v2
       with:
         node-version: '14'
-    - run: npm install
-    - run: npm install -g appium
-    - run: appium -v
-    - run: npm install appium-doctor -g
+    - name: Install dependencies
+      run: npm install
+    - name: Install appium
+      run: npm install -g appium
+    - name: check appium version
+      run: appium -v
+    - name: install appium doctor
+      run: npm install appium-doctor -g
+    - name: Run appium
+      run: appium
     
     - name: Run Appium Tests
     - uses: reactivecircus/android-emulator-runner@v1
