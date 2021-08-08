@@ -43,7 +43,7 @@ jobs:
     - run: adb devices
   # Verify $ANDROID_HOME is properly set for later Gradle commands.
     - run: echo $ANDROID_HOME
-    - uses: reactivecircus/android-emulator-runner@v1
+    - uses: malinskiy/action-android/emulator-run-cmd@release/0.1.2
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
