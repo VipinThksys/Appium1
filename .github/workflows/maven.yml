@@ -11,30 +11,30 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
-
+    strategy:
+      matrix:
+        api-level: [29]  
+        target: [default]
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v1
       with:
-        java-version: '11'
-        distribution: 'adopt'
-        
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v2
+        java-version: 11
+    - uses: actions/setup-node@v2
       with:
-        node-version: '14'
-    
+       node-version: '12'
+    - run: |
+            npm install -g appium
+            appium -v
+            npm install appium-doctor -g
+            appium &>/dev/null &
     - name: Run Appium Tests
-    - uses: reactivecircus/android-emulator-runner@v1
+      uses: reactivecircus/android-emulator-runner@v1
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
         arch: x86_64
         profile: Nexus 6
         script: mvn -B package --file pom.xml
-    
-   
