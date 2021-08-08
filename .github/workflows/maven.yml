@@ -28,7 +28,7 @@ jobs:
     - run: npm install -g appium
     - run: appium -v
     - run: npm install appium-doctor -g
-    - run:  appium
+    - run: appium &>/dev/null &
     - run: npm install node-android-sdk-platform-tools --save
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v1
