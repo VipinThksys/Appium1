@@ -30,11 +30,12 @@ jobs:
             appium -v
             npm install appium-doctor -g
             appium &>/dev/null &
+            npm install node-android-sdk-platform-tools --save
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v1
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
-        arch: x86_64
+        arch: x86
         profile: Nexus 6
         script: mvn -B package --file pom.xml
