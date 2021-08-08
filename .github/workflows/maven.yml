@@ -28,15 +28,15 @@ jobs:
       with:
         node-version: '14'
     - name: Install dependencies
-      run: npm install
+    - run: npm install
     - name: Install appium
-      run: npm install -g appium
+    - run: npm install -g appium
     - name: check appium version
-      run: appium -v
+    - run: appium -v
     - name: install appium doctor
-      run: npm install appium-doctor -g
+    - run: npm install appium-doctor -g
     - name: Run appium
-      run: appium
+    - run: appium
     
     - name: Run Appium Tests
     - uses: reactivecircus/android-emulator-runner@v1
