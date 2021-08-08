@@ -25,12 +25,11 @@ jobs:
     - uses: actions/setup-node@v2
       with:
        node-version: '12'
-    - run: |
-            npm install -g appium
-            appium -v
-            npm install appium-doctor -g
-            appium &>/dev/null &
-            npm install node-android-sdk-platform-tools --save
+    - run: npm install -g appium
+    - run: appium -v
+    - run: npm install appium-doctor -g
+    - run:  appium &>/dev/null &
+    - run: npm install node-android-sdk-platform-tools --save
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v1
       with:
