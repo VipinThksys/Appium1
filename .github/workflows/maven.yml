@@ -45,9 +45,9 @@ jobs:
     - run: echo $ANDROID_HOME
     - uses: malinskiy/action-android/emulator-run-cmd@release/0.1.2
       with:
-        api-level: ${{ matrix.api-level }}
-        target: ${{ matrix.target }}
-        arch: x86_64
-        profile: Nexus 6
-        script: mvn clean test -Pandroid
+         api: 25
+         tag: google_apis
+         abi: x86
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
    
