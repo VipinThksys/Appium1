@@ -46,9 +46,11 @@ public class AndroidCap {
 	@Test
 	public void playStore() throws MalformedURLException, InterruptedException {
 		cap();
+		System.out.println("driver set");
 		Thread.sleep(20000);
 		quit();
 		System.out.println("driver quit");
+		
 	}
 	
 	
