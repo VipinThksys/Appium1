@@ -55,13 +55,9 @@ jobs:
       run: |
           npm install --save-dev
       # Start the Appium Server
-    - name: Start the Appium Server
-      run: ./node_modules/.bin/appium --log-timestamp --log-no-colors --allow-insecure chromedriver_autodownload > appium.log &
-      # Poll for Appium Server to Start
-    - name: Poll for Appium Server to Start
+    - name: Install and Run Appium Server
       run: |
-          until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:4723/wd/hub/sessions); do
-            sleep 5
-          done
+        chmod +x ./scripts/RunAppiumServer.sh # install and run appium server in the background
+        ./scripts/RunAppiumServer.sh
     - name: Build with Maven
       run: mvn -B package --file pom.xml
