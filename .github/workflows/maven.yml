@@ -57,7 +57,9 @@ jobs:
       # Start the Appium Server
     - name: Install and Run Appium Server
       run: |
-        chmod +x ./scripts/RunAppiumServer.sh # install and run appium server in the background
-        ./scripts/RunAppiumServer.sh
+          npm install -g appium
+          appium -v
+          npm install appium-doctor -g
+          appium &>/dev/null &
     - name: Build with Maven
       run: mvn -B package --file pom.xml
