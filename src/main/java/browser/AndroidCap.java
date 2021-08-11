@@ -44,7 +44,8 @@ package browser;
 		public void playStore() throws MalformedURLException, InterruptedException {
 			cap();
 			System.out.println("driver set");
-			Thread.sleep(20000);
+			Thread.sleep(30000);
+			
 			quit();
 			System.out.println("driver quit");
 			
