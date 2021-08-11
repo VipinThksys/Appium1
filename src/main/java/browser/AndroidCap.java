@@ -22,6 +22,8 @@ package browser;
 			cap.setCapability("deviceName", "emulator-4723");
 			cap.setCapability("automationName", "UiAutomator2");
 			cap.setCapability("platformVersion", "10.0");
+			cap.setCapability("newCommandTimeout", "45000");
+			cap.setCapability("androidInstallTimeout", "90000");
 			// cap.setCapability("appPackage", "com.android.calculator2");
 			// cap.setCapability("appActivity", ".Calculator");
 			// cap.setCapability("appPackage", "com.google.android.dialer");
