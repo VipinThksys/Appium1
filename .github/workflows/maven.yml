@@ -61,5 +61,6 @@ jobs:
           appium -v
           npm install appium-doctor -g
           appium &>/dev/null &
+    - uses: actions/checkout@v2
     - name: Build with Maven
       run: mvn -B package --file pom.xml
