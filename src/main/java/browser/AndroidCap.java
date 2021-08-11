@@ -33,7 +33,6 @@ package browser;
 			cap.setCapability("app", System.getProperty("user.dir")+"/app/WorkMaxRN_0_8_16.apk");
 
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
-			
 		}
 		
 		
