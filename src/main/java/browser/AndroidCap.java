@@ -45,7 +45,7 @@ package browser;
 			cap();
 			System.out.println("driver set");
 			Thread.sleep(20000);
-			
+			System.out.println("HI WorkMax");
 			quit();
 			System.out.println("driver quit");
 			
